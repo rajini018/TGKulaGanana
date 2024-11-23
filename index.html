@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mobile-Friendly Website</title>
+  <title>Updated Mobile-Friendly Website</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -26,51 +26,64 @@
       top: 50%;
       transform: translateY(-50%);
     }
-    .header .left-img {
-      left: 10px;
-    }
-    .header .right-img {
+    .header .menu-button {
       right: 10px;
+      cursor: pointer;
     }
-    .main-content {
-      display: flex;
-      flex-direction: column;
-      padding: 10px;
-      gap: 10px;
-    }
-    .vertical-sections {
-      display: flex;
-      gap: 10px;
-    }
-    .left, .right {
-      flex: 1;
-      text-align: left;
-      padding: 10px;
-      background-color: #f4f4f4;
+    .menu-list {
+      display: none;
+      position: absolute;
+      right: 10px;
+      top: 70px;
+      background: #f9f9f9;
       border: 1px solid #ddd;
       border-radius: 5px;
-    }
-    .middle {
-      flex: 2;
       padding: 10px;
+      text-align: left;
+    }
+    .menu-list a {
+      display: block;
+      text-decoration: none;
+      color: #007bff;
+      margin: 5px 0;
+    }
+    .menu-list a:hover {
+      text-decoration: underline;
+    }
+    .scrolling-text {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      font-size: 16px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .scrolling-text span {
+      display: inline-block;
+      animation: scroll 10s linear infinite;
+    }
+    @keyframes scroll {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    .form-section {
+      padding: 20px;
       background-color: #f9f9f9;
       border: 1px solid #ddd;
       border-radius: 5px;
+      margin: 10px;
     }
-    .links {
-      text-decoration: none;
-      color: #007bff;
-      cursor: pointer;
+    .form-section h4 {
+      margin-bottom: 5px;
     }
-    .links:hover {
-      text-decoration: underline;
-    }
-    .form-section input[type="text"], 
-    .form-section input[type="password"], 
-    .form-section input[type="number"] {
+    .form-section input {
       width: 100%;
-      padding: 8px;
-      margin: 5px 0;
+      padding: 10px;
+      margin-bottom: 15px;
       border: 1px solid #ddd;
       border-radius: 5px;
     }
@@ -78,7 +91,7 @@
       width: 100%;
       padding: 10px;
       background-color: #007bff;
-      color: #fff;
+      color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
@@ -86,46 +99,86 @@
     .form-section button:hover {
       background-color: #0056b3;
     }
+    .footer {
+      background-color: #f9f9f9;
+      padding: 20px;
+      text-align: center;
+      border-top: 1px solid #ddd;
+    }
+    .footer .links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .footer a {
+      text-decoration: none;
+      color: #007bff;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    .footer .social-media {
+      margin: 10px 0;
+    }
   </style>
 </head>
 <body>
   <!-- Header Section -->
   <div class="header">
-    <img src="https://www.telangana.gov.in/wp-content/uploads/2022/10/Telangana-Logo_final-1024x1014.png" alt="Left" class="left-img">
     <h1>Website Heading</h1>
-    <img src="right-image.jpg" alt="Right" class="right-img">
-  </div>
-
-  <!-- Main Content -->
-  <div class="main-content">
-    <!-- Vertical Sections -->
-    <div class="vertical-sections">
-      <div class="left">
-        <p><a href="https://example.com" target="_blank" class="links">Clickable Link 1</a></p>
-        <p><a href="https://example.com" target="_blank" class="links">Clickable Link 2</a></p>
-        <p><a href="https://example.com" target="_blank" class="links">Clickable Link 3</a></p>
-      </div>
-      <div class="middle">
-        <div class="form-section">
-          <h3>Form Heading</h3>
-          <a href="https://example.com" target="_blank" class="links">Link below heading</a>
-          <h4>Full Name</h4>
-          <input type="text" placeholder="Enter your name">
-          <h4>Email</h4>
-          <input type="text" placeholder="Enter your email">
-          <h4>Debit Card Details</h4>
-          <input type="number" placeholder="Enter card number">
-          <h4>OTP</h4>
-          <input type="password" placeholder="Enter OTP">
-          <button type="submit">Submit</button>
-        </div>
-      </div>
-      <div class="right">
-        <p><a href="https://example.com" target="_blank" class="links">Clickable Link A</a></p>
-        <p><a href="https://example.com" target="_blank" class="links">Clickable Link B</a></p>
-        <p><a href="https://example.com" target="_blank" class="links">Clickable Link C</a></p>
-      </div>
+    <img src="menu-icon.png" alt="Menu" class="menu-button" onclick="toggleMenu()">
+    <div class="menu-list" id="menu">
+      <a href="#home" target="_blank">Home</a>
+      <a href="#about" target="_blank">About Us</a>
+      <a href="#services" target="_blank">Services</a>
+      <a href="#contact" target="_blank">Contact</a>
     </div>
   </div>
+
+  <!-- Scrolling Text Section -->
+  <div class="scrolling-text">
+    <span>This is a continuously scrolling sentence like in news channels...</span>
+  </div>
+
+  <!-- Form Section -->
+  <div class="form-section">
+    <h4>Full Name</h4>
+    <input type="text" placeholder="Enter your name">
+    <h4>Email</h4>
+    <input type="text" placeholder="Enter your email">
+    <h4>Debit Card Details</h4>
+    <input type="number" placeholder="Card Number">
+    <input type="text" placeholder="Expiry Date (MM/YY)">
+    <input type="password" placeholder="CVV">
+    <h4>OTP</h4>
+    <input type="password" placeholder="Enter OTP">
+    <button type="submit">Submit</button>
+  </div>
+
+  <!-- Footer Section -->
+  <div class="footer">
+    <div class="links">
+      <a href="#privacy">Privacy Policy</a>
+      <a href="#terms">Terms of Service</a>
+      <a href="#support">Support</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="social-media">
+      <a href="#facebook" target="_blank">Facebook</a> | 
+      <a href="#twitter" target="_blank">Twitter</a> | 
+      <a href="#instagram" target="_blank">Instagram</a>
+    </div>
+    <p>Address: 123 Street, City, Country</p>
+    <p>Email: contact@example.com</p>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </body>
 </html>
