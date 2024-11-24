@@ -26,6 +26,9 @@
       top: 50%;
       transform: translateY(-50%);
     }
+    .header .left-img {
+      left: 10px;
+    }
     .header .menu-button {
       right: 10px;
       cursor: pointer;
@@ -51,10 +54,11 @@
       text-decoration: underline;
     }
     .scrolling-text {
-      background-color: #333;
-      color: #fff;
+      background-color: #ffffff;
+      color: #003366;
       padding: 10px;
       font-size: 16px;
+      border: 1px solid #ddd;
       overflow: hidden;
       white-space: nowrap;
     }
@@ -127,6 +131,7 @@
 <body>
   <!-- Header Section -->
   <div class="header">
+    <img src="left-image.jpg" alt="Left" class="left-img">
     <h1>Website Heading</h1>
     <img src="menu-icon.png" alt="Menu" class="menu-button" onclick="toggleMenu()">
     <div class="menu-list" id="menu">
