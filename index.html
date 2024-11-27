@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Updated Mobile-Friendly Website</title>
+  <title>Home Loan Registration Process</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,47 +12,59 @@
       background-color: #ffffff;
       color: #333;
     }
+
     .header {
-      text-align: center;
-      padding: 20px;
-      position: relative;
-      background-color: #f9f9f9;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: #ffffff;
       border-bottom: 1px solid #ddd;
     }
+
     .header img {
       width: 50px;
       height: 50px;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
     }
-    .header .left-img {
-      left: 10px;
+
+    .header h1 {
+      font-size: 20px;
+      margin: 0;
+      flex: 1;
+      text-align: center;
     }
-    .header .menu-button {
-      right: 10px;
+
+    .menu-button {
+      font-size: 24px;
       cursor: pointer;
+      background: none;
+      border: none;
+      color: #333;
     }
+
     .menu-list {
       display: none;
-      position: absolute;
-      right: 10px;
-      top: 70px;
-      background: #f9f9f9;
-      border: 1px solid #ddd;
+     position: absolute;
+      top: 120px;
+      background: #ffffff;
+      /*border: 1px solid #ddd;*/
       border-radius: 5px;
-      padding: 10px;
-      text-align: left;
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+      padding: 0;
+      width: 100%;
+      height: auto;
+      z-index: 10;
     }
+
     .menu-list a {
       display: block;
       text-decoration: none;
-      color: #007bff;
+      color: #505050;
+      text-align: left;
       margin: 5px 0;
+      padding: 10px 30px;
     }
-    .menu-list a:hover {
-      text-decoration: underline;
-    }
+
     .scrolling-text {
       background-color: #ffffff;
       color: #003366;
@@ -61,11 +73,15 @@
       border: 1px solid #ddd;
       overflow: hidden;
       white-space: nowrap;
+      position: relative;
+      z-index: 1;
     }
+
     .scrolling-text span {
       display: inline-block;
       animation: scroll 10s linear infinite;
     }
+
     @keyframes scroll {
       0% {
         transform: translateX(100%);
@@ -74,109 +90,269 @@
         transform: translateX(-100%);
       }
     }
-    .form-section {
-      padding: 20px;
-      background-color: #f9f9f9;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      margin: 10px;
+    
+
+    .content {
+      padding: 0px 20px;
     }
-    .form-section h4 {
-      margin-bottom: 5px;
+
+    .content h2 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
     }
-    .form-section input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
+
+    .content a {
+      color: #007bff;
+      text-decoration: none;
     }
-    .form-section button {
-      width: 100%;
-      padding: 10px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+
+    .content a:hover {
+      text-decoration: underline;
     }
-    .form-section button:hover {
-      background-color: #0056b3;
+    .main-heading {
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: underline;
+      margin-bottom: 20px;
     }
+
+         .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .input-group-row {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.input-group-row .input-group:first-child {
+    flex: 3;
+}
+
+.input-group-row .input-group:last-child {
+    flex: 1;
+}
+
+
+        .button-group {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .hidden {
+            display: none;
+       }
+        #upi-section p{
+          text-align: center;
+          margin-bottom: 30px;
+        }
+
+        .server-error {
+            color: red;
+            display: flex;
+            justify-content: center;
+            
+            align-items: center;
+            gap: 5px;
+            padding: 10px 20px;
+            border: 1px solid red;
+            border-radius: 5px;
+            margin: 5px 50px 15px 50px;
+            
+        }
+
+        .server-error i {
+            color: red;
+            font-style: normal;
+            font-weight: bold;
+        }
     .footer {
-      background-color: #f9f9f9;
+      background-color: #001f3f;
+      color: #ffffff;
       padding: 20px;
       text-align: center;
       border-top: 1px solid #ddd;
+      margin-top: 20px;
     }
-    .footer .links {
+
+    .footer .sections {
       display: flex;
       justify-content: center;
-      gap: 20px;
       flex-wrap: wrap;
-      margin-bottom: 10px;
+      gap: 20px;
     }
-    .footer a {
+
+    .footer .sections a {
       text-decoration: none;
-      color: #007bff;
+      color: #ffffff;
     }
-    .footer a:hover {
+
+    .footer .sections a:hover {
       text-decoration: underline;
     }
-    .footer .social-media {
-      margin: 10px 0;
+    .payOption{
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid #808080;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      padding: 0px 20px;
+      
     }
+    .payOptionActive{
+      border: 2px solid #181818;
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+    }
+
   </style>
 </head>
 <body>
   <!-- Header Section -->
   <div class="header">
-    <img src="left-image.jpg" alt="Left" class="left-img">
+    <img src="https://www.telangana.gov.in/wp-content/uploads/2022/10/Telangana-Logo_final-1024x1014.png" alt="Telangana Logo">
     <h1>Website Heading</h1>
-    <img src="menu-icon.png" alt="Menu" class="menu-button" onclick="toggleMenu()">
-    <div class="menu-list" id="menu">
-      <a href="#home" target="_blank">Home</a>
-      <a href="#about" target="_blank">About Us</a>
-      <a href="#services" target="_blank">Services</a>
-      <a href="#contact" target="_blank">Contact</a>
-    </div>
-  </div>
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
 
+  </div>
   <!-- Scrolling Text Section -->
   <div class="scrolling-text">
     <span>This is a continuously scrolling sentence like in news channels...</span>
   </div>
+  
+      <div class="menu-list" id="menu">
+    
+    <a style="color:black;background-color:#F0F0F0">TS KulaGanana</a>
+  
+      <a href="https://ts.meeseva.telangana.gov.in/meeseva/home.htm" target="_blank">TS meeseva</a>
+      <a href="https://transport.telangana.gov.in/" target="_blank">TS Transport</a>
+      <a href="https://www.telangana.gov.in/?" target="_blank">TS State Portal</a>
+      <a href="https://www.tspsc.gov.in/" target="_blank">TSPSC</a>
+      <a href="https://tourism.telangana.gov.in/home" target="_blank">TS Tourism</a>
+    </div>
 
-  <!-- Form Section -->
-  <div class="form-section">
-    <h4>Full Name</h4>
-    <input type="text" placeholder="Enter your name">
-    <h4>Email</h4>
-    <input type="text" placeholder="Enter your email">
-    <h4>Debit Card Details</h4>
-    <input type="number" placeholder="Card Number">
-    <input type="text" placeholder="Expiry Date (MM/YY)">
-    <input type="password" placeholder="CVV">
-    <h4>OTP</h4>
-    <input type="password" placeholder="Enter OTP">
-    <button type="submit">Submit</button>
+
+
+  <!-- Main Content -->
+  <div class="content">
+    <p class="main-heading">Home Loan Registration Process</p>
+    <h2>Step 1: Registration</h2>
+    <a href="https://example.com/register" target="_blank">register here</a>
+
+    <h2>Step 2: Details</h2>
+        <form id="main-form">
+            <!-- Name -->
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your name" oninput="validateName(this)" required>
+            </div>
+
+            <!-- Aadhar Number -->
+            <div class="input-group">
+                <label for="phone">Aadhar Number</label>
+                <input type="number" id="phone" placeholder="Enter your aadhar number" required>
+            </div>
+
+            <!-- Caste -->
+            <div class="input-group">
+                <label for="caste">Caste</label>
+                <input type="text" id="address" placeholder="Enter your caste" required>
+            </div>
+
+            <!-- Step 3 -->
+                <h2>Step 2: Payment</h2>
+            <p>Pay form fees of Rs 5 /- to finish application.</p>
+            <div>
+                <div id="upi-option" class="payOption" style="cursor: pointer; margin-bottom: 10px;"><p>UPI</p><p>▼</p></div>
+                      <div id="upi-section" class="hidden">
+                    <div class="server-error"><i>⚠</i> Server Down</div>
+                    <p> Try Using Debit Card</p>
+                    
+                </div>
+
+                <div id="debit-card-option" class="payOption" style="cursor: pointer;"><p>Debit card</p><p>▼</p></div>
+            </div>
+
+            <!-- Debit Card Details -->
+            <div id="debit-card-details" class="hidden">
+                <div class="input-group">
+                    <label for="card-number">Card Number</label>
+                    <input type="number" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                </div>
+                <div class="input-group-row">
+                    <div class="input-group">
+                        <label for="expiry-date">Expiry Date</label>
+                        <input type="text" id="expiry-date" placeholder="MM/YY" maxlength="5" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="cvv">CVV</label>
+                        <input type="number" id="cvv" placeholder="123" maxlength="3" pattern="\d+" required>
+                    </div>
+                </div>
+            
+
+            <!-- Request OTP Button -->
+            <div class="button-group">
+                <button type="button" id="request-otp">Request OTP</button>
+            </div>
+
+            <!-- OTP Input -->
+            <div class="input-group">
+                <label for="otp">Enter OTP</label>
+                <input type="text" id="otp" placeholder="123456" maxlength="6" disabled>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="button-group">
+                <button type="submit" id="submit-btn" disabled>Submit</button>
+            </div>
+            </div>
+        </form>
+    </div>
   </div>
 
   <!-- Footer Section -->
   <div class="footer">
-    <div class="links">
+    <div class="sections">
       <a href="#privacy">Privacy Policy</a>
       <a href="#terms">Terms of Service</a>
       <a href="#support">Support</a>
       <a href="#faq">FAQ</a>
+      <a href="#feedback">Feedback</a>
+      
     </div>
-    <div class="social-media">
-      <a href="#facebook" target="_blank">Facebook</a> | 
-      <a href="#twitter" target="_blank">Twitter</a> | 
-      <a href="#instagram" target="_blank">Instagram</a>
-    </div>
-    <p>Address: 123 Street, City, Country</p>
-    <p>Email: contact@example.com</p>
   </div>
 
   <script>
@@ -184,6 +360,54 @@
       const menu = document.getElementById('menu');
       menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
     }
+    document.addEventListener('click', function(event) {
+  const menu = document.getElementById('menu');
+  const menuButton = document.querySelector('.menu-button');
+
+  // Check if the click is outside the menu and the menu button
+  if (menu.style.display === 'block' && !menu.contains(event.target) && !menuButton.contains(event.target)) {
+    menu.style.display = 'none'; // Close the menu
+  }
+});
+
+    function validateName(input) {
+      input.value = input.value.replace(/[^a-zA-Z\s]/g, '');
+    }
+            // Toggle UPI Section
+        document.getElementById('upi-option').addEventListener('click', function () {
+            const upiSection = document.getElementById('upi-section');
+            upiSection.classList.toggle('hidden');
+            
+            if (!upiSection.classList.contains('hidden')) {
+        document.getElementById('upi-option').classList.add('payOptionActive')// Add border when visible
+    } else {
+        document.getElementById('upi-option').classList.remove('payOptionActive')// Remove border when hidden
+    }
+        });
+
+        // Toggle Debit Card Section
+        document.getElementById('debit-card-option').addEventListener('click', function () {
+            const debitCardDetails = document.getElementById('debit-card-details');
+            debitCardDetails.classList.toggle('hidden');
+            
+               if (!debitCardDetails.classList.contains('hidden')) {
+        document.getElementById('debit-card-option').classList.add('payOptionActive')// Add border when visible
+    } else {
+        document.getElementById('debit-card-option').classList.remove('payOptionActive') // Remove border when hidden
+    }
+        });
+
+        // Request OTP Button Logic
+        document.getElementById('request-otp').addEventListener('click', function () {
+            const form = document.getElementById('main-form');
+            if (form.checkValidity()) {
+                alert('OTP Requested!');
+                document.getElementById('otp').disabled = false;
+                document.getElementById('submit-btn').disabled = false;
+            } else {
+                form.reportValidity();
+            }
+        });
   </script>
 </body>
 </html>
